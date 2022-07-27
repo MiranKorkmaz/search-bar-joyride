@@ -1,32 +1,20 @@
 import { FC, useState } from "react";
 import "./UserFinder.css";
+import { users } from "../../data/UserFinderData";
+import { IUserFinder } from "../../interfaces/interfaces";
 
 
 export const UserFinder: FC = () => {
-    const users = [
-        {
-            name: "Ronni",
-            age: 23,
-            designation: "Stockbroker"
-        },
-        {
-            name: "Miran",
-            age: 25,
-            designation: "Software Engineer"
-        },
-        {
-            name: "Matin",
-            age: 24,
-            designation: "Law Student"
-        },
-        {
-            name: "Ala",
-            age: 1.5,
-            designation: "A Cat"
-        },
-    ];
-
+    const [userList, setUserList] = useState<Array<IUserFinder> | undefined>(users)
     const [text, setText] = useState("");
+
+    const handleOnClick = () => {
+        const findUsers = 
+            userList && userList?.length > 0
+            ? userList?.filter(u => u?.name === text): undefined;
+        setUserList(findUsers);
+    };
+
     return (
         <div>
             <div className="title">
@@ -39,10 +27,23 @@ export const UserFinder: FC = () => {
                     value={text}
                     onChange={e => setText(e.target.value)}
                     />
-                <button>Search</button>
+                <button 
+                    disabled={!text} 
+                    onClick={handleOnClick}
+                >
+                    Search
+                </button>
             </div>
             <div className="body">
-
+                {userList && userList?.length > 0 && userList?.map(user => {
+                    return (
+                        <div className="body-item">
+                            <h3>Name: {user?.name}</h3>
+                            <p>Age: {user?.age}</p>
+                            <p>Designation {user?.designation}</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

@@ -39,7 +39,7 @@
     cursor: pointer;
 }
 
-.body {
+.body-item {
     text-align: left;
     border: 1px solid #d3cfca;
     padding: 20px;
