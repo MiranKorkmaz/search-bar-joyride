@@ -10,3 +10,31 @@
     padding: 0px;
     margin: 0px;
 }
+
+.input-wrapper {
+    margin: 20px;
+    text-align: center;
+}
+
+.input-wrapper input {
+    border: 3px solid #000000;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+}
+
+.input-wrapper button {
+    background-color: #dbd4cd;
+    color: #000000;
+    padding: 8px 15px;
+    font-size: 18px;
+    border: none;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
