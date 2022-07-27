@@ -38,3 +38,11 @@
     margin-left: 10px;
     cursor: pointer;
 }
+
+.body {
+    text-align: left;
+    border: 1px solid #d3cfca;
+    padding: 20px;
+    width: 500px;
+    margin: 20px auto;
+}
