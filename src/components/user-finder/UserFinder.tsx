@@ -25,7 +25,7 @@ export const UserFinder: FC = () => {
                     type="text"
                     placeholder="Search User"
                     value={text}
-                    onChange={e => setText(e.target.value)}
+                    onChange={(e) => {setText(e.target.value); setUserList(users)}}
                     />
                 <button 
                     disabled={!text} 
@@ -35,6 +35,10 @@ export const UserFinder: FC = () => {
                 </button>
             </div>
             <div className="body">
+                {userList && userList?.length === 0 && (
+                    <div className="not-found">No User Found</div>
+                )}
+                
                 {userList && userList?.length > 0 && userList?.map(user => {
                     return (
                         <div className="body-item">
