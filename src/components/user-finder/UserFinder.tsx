@@ -3,7 +3,6 @@ import "./UserFinder.css";
 import { users } from "../../data/UserFinderData";
 import { IUserFinder } from "../../interfaces/interfaces";
 
-
 export const UserFinder: FC = () => {
     const [userList, setUserList] = useState<Array<IUserFinder> | undefined>(users)
     const [text, setText] = useState("");
