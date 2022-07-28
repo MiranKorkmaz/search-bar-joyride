@@ -5,18 +5,28 @@ import { Step } from "react-joyride";
 
 const STEPS: Step[] = [
     {
-        content: <h2>Let's begin our journey!</h2>,
+        content: <h2>Welcome! Let's begin our joyrney.</h2>,
         locale: { skip: <strong aria-label="skip">SKIP</strong> },
         placement: "center",
-        target: "button",
+        target: "body",
     },
     {
-        content: <h2>Sticky Elemeny</h2>,
+        content: <h2>Search for the user you are looking for.</h2>,
         floaterProps: {
             disableAnimation: true,
         },
-        spotlightPadding: 20,
+        spotlightPadding: 10,
         target: "input",
+        locale: { skip: <strong aria-label="skip">SKIP</strong> },
+    },
+    {
+        content: <h2>Press the button for the search result.</h2>,
+        floaterProps: {
+            disableAnimation: true,
+        },
+        spotlightPadding: 10,
+        target: "button",
+        locale: { skip: <strong aria-label="skip">SKIP</strong> },
     },
 ]
 
