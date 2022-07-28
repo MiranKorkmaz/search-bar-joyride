@@ -1,11 +1,6 @@
 import { ReactNode, useMemo, useCallback, useState, useEffect } from "react";
 import Joyride, { CallBackProps, STATUS, Step } from "react-joyride";
-
-const joyRideStyles = {
-    options: {
-        zIndex: 10000,
-    }
-}
+import { joyRideStyles } from "./JoyrideStyling"
 
 export default function JoyrideTour(
     steps: Step[],
